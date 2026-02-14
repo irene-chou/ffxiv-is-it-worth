@@ -20,9 +20,9 @@ function AppContent() {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-2">
-        GilFinder
+        這個有賺頭！
       </h1>
-      <p className="text-gray-500 mb-6">FFXIV 製作利潤分析器 — {DEFAULT_WORLD}</p>
+      <p className="text-gray-500 mb-6">FFXIV 物品利潤分析器 - 繁中服</p>
 
       <JobSelector
         jobs={CRAFTING_JOBS}
