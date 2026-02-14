@@ -3,7 +3,6 @@ import {
   UNIVERSALIS_BATCH_SIZE,
   MAX_RETRIES,
   INITIAL_BACKOFF_MS,
-  USER_AGENT,
 } from '@shared/constants.js';
 import type { MarketPriceInfo } from '@shared/types.js';
 import type { FetchProgress } from './xivapi';
@@ -14,7 +13,7 @@ async function fetchWithRetry<T>(url: string, signal?: AbortSignal): Promise<T> 
   let backoff = INITIAL_BACKOFF_MS;
 
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-    const res = await fetch(url, { signal, headers: { 'X-Request-Source': USER_AGENT } });
+    const res = await fetch(url, { signal });
     if (res.ok) return res.json() as Promise<T>;
 
     if ((res.status === 429 || res.status === 503) && attempt < MAX_RETRIES) {

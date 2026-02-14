@@ -5,7 +5,7 @@ export const UNIVERSALIS_BASE = 'https://universalis.app/api/v2';
 export const USER_AGENT = 'GilFinder/1.0 (FFXIV crafting profit analyzer)';
 
 export const XIVAPI_DELAY_MS = 50;
-export const UNIVERSALIS_BATCH_SIZE = 50;
+export const UNIVERSALIS_BATCH_SIZE = 100;
 export const MAX_RETRIES = 3;
 export const INITIAL_BACKOFF_MS = 1000;
 
