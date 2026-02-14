@@ -13,10 +13,10 @@ export function JobSelector({ jobs, selected, onSelect }: Props) {
         <button
           key={job.craftTypeId}
           onClick={() => onSelect(job)}
-          className={`px-4 py-3 rounded-lg font-medium transition-colors cursor-pointer
+          className={`px-4 py-3 rounded-lg font-medium transition-all cursor-pointer border
             ${selected?.craftTypeId === job.craftTypeId
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
+              ? 'bg-gold-500/20 text-gold-400 border-gold-500 shadow-[0_0_8px_rgba(246,196,69,0.15)]'
+              : 'bg-dark-700 hover:bg-dark-600 text-gray-300 border-dark-600'
             }`}
         >
           {job.displayName}

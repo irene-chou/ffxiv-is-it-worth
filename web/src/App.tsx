@@ -38,10 +38,11 @@ function AppContent() {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-2">
-        這個有賺頭！
+      <h1 className="text-3xl font-black mb-1 text-gold-400 tracking-tight">
+        這個有賺頭！💰
       </h1>
-      <p className="text-gray-500 mb-6">FFXIV 物品利潤分析器 - 繁中服</p>
+      <p className="text-sm text-gray-400 mb-1">FFXIV 物品利潤分析器 - 繁中服</p>
+      <p className="text-xs text-gray-500 mb-6">查了才知道是不是在浪費水晶 · <span className="text-gray-600">板子價格每秒都在變，僅供參考</span></p>
 
       <WorldSelector selected={world} onSelect={setWorld} />
 
@@ -71,7 +72,7 @@ function AppContent() {
       )}
 
       {!selectedJob && (
-        <p className="text-gray-400 text-center py-8">選擇一個製作職業開始分析</p>
+        <p className="text-gray-500 text-center py-8">👆 選一個職業，讓我幫你算算看</p>
       )}
     </div>
   );

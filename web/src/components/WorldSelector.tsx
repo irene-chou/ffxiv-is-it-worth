@@ -12,7 +12,7 @@ export function WorldSelector({ selected, onSelect }: Props) {
       <select
         value={selected}
         onChange={(e) => onSelect(e.target.value)}
-        className="border border-gray-300 rounded-lg px-3 py-2 text-gray-800 bg-white"
+        className="border border-dark-600 rounded-lg px-3 py-2 text-gray-200 bg-dark-700 focus:border-gold-500 focus:outline-none"
       >
         {TC_WORLDS.map((world) => (
           <option key={world} value={world}>

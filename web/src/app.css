@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+  --color-dark-900: #0f1117;
+  --color-dark-800: #171923;
+  --color-dark-700: #1e2130;
+  --color-dark-600: #2a2d3e;
+  --color-gold-400: #f6c445;
+  --color-gold-500: #e5a920;
+  --color-gold-600: #c48d0c;
+}
+
+body {
+  background-color: var(--color-dark-900);
+  color: #e2e8f0;
+  min-height: 100vh;
+}

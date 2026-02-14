@@ -25,12 +25,12 @@ export function ResultsTable({ results, world, jobName, itemNames }: Props) {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-4">
-        {world} {jobName} 利潤最高的 {TOP_N} 個配方
+      <h2 className="text-lg font-bold mb-4 text-gray-200">
+        {world} · {jobName} · 利潤 TOP {TOP_N} 🏆
       </h2>
 
       {top.length === 0 ? (
-        <p className="text-gray-500 py-4">找不到有市場資料的可獲利配方。</p>
+        <p className="text-gray-500 py-4">找不到有市場資料的可獲利配方 😢</p>
       ) : (
         <div className="space-y-3">
           {top.map((r, i) => {
@@ -38,23 +38,23 @@ export function ResultsTable({ results, world, jobName, itemNames }: Props) {
             const isExpanded = expandedIndex === i;
 
             return (
-              <div key={r.resultItemId} className="rounded-lg border border-gray-200 overflow-hidden">
+              <div key={r.resultItemId} className="rounded-lg border border-dark-600 bg-dark-800 overflow-hidden">
                 <button
                   onClick={() => setExpandedIndex(isExpanded ? null : i)}
-                  className="w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors cursor-pointer"
+                  className="w-full text-left px-4 py-3 hover:bg-dark-700 transition-colors cursor-pointer"
                 >
                   <div className="flex items-baseline justify-between">
-                    <span className="font-medium">
+                    <span className="font-medium text-gray-200">
                       #{i + 1} {displayName}
                     </span>
-                    <span className={`text-lg font-bold ${r.profit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                    <span className={`text-lg font-bold ${r.profit >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                       {r.profit >= 0 ? '+' : ''}{formatGil(r.profit)}
                     </span>
                   </div>
                   <div className="flex gap-4 text-sm text-gray-500 mt-1">
                     <span>售價: {formatGil(r.salePrice)}</span>
                     <span>成本: {formatGil(r.craftingCost)}</span>
-                    <span className={r.profitMargin >= 0 ? 'text-green-600' : 'text-red-600'}>
+                    <span className={r.profitMargin >= 0 ? 'text-green-400' : 'text-red-400'}>
                       利率: {r.profitMargin}%
                     </span>
                     <span>更新: {r.dataFreshness}</span>
@@ -62,15 +62,15 @@ export function ResultsTable({ results, world, jobName, itemNames }: Props) {
                 </button>
 
                 {isExpanded && r.ingredients.length > 0 && (
-                  <div className="border-t border-gray-100 bg-gray-50 px-4 py-3">
+                  <div className="border-t border-dark-600 bg-dark-700/50 px-4 py-3">
                     <p className="text-xs font-medium text-gray-500 mb-2">素材</p>
                     <div className="space-y-1">
                       {r.ingredients.map((ing) => (
-                        <div key={ing.itemId} className="flex justify-between text-sm text-gray-600">
+                        <div key={ing.itemId} className="flex justify-between text-sm text-gray-400">
                           <span>
                             {ing.quantity}x {resolveName(ing.itemId, ing.name, itemNames)}
                           </span>
-                          <span>
+                          <span className="text-gray-500">
                             @ {formatGil(ing.unitPrice)} = {formatGil(ing.subtotal)}
                           </span>
                         </div>
@@ -84,7 +84,7 @@ export function ResultsTable({ results, world, jobName, itemNames }: Props) {
         </div>
       )}
 
-      <p className="text-sm text-gray-400 mt-4">
+      <p className="text-sm text-gray-500 mt-4">
         共 {results.length} 個有市場資料的配方，其中 {profitable} 個可獲利
       </p>
     </div>
