@@ -5,7 +5,7 @@ export const UNIVERSALIS_BASE = 'https://universalis.app/api/v2';
 export const USER_AGENT = 'GilFinder/1.0 (FFXIV crafting profit analyzer)';
 
 export const XIVAPI_DELAY_MS = 50;
-export const UNIVERSALIS_BATCH_SIZE = 100;
+export const UNIVERSALIS_BATCH_SIZE = 50;
 export const MAX_RETRIES = 3;
 export const INITIAL_BACKOFF_MS = 1000;
 
@@ -30,16 +30,20 @@ export const CRAFTING_JOBS: CraftingJob[] = [
 
 export const TOP_N = 5;
 
-// 繁中服（陸行鳥）伺服器列表
+// 繁中服（陸行鳥）伺服器列表 + Universalis world IDs
 export const TC_WORLDS = [
-  '伊弗利特',
-  '迦樓羅',
-  '利維坦',
-  '鳳凰',
-  '奧汀',
-  '巴哈姆特',
-  '拉姆',
-  '泰坦',
+  { id: '4028', name: '伊弗利特' },
+  { id: '4029', name: '迦樓羅' },
+  { id: '4030', name: '利維坦' },
+  { id: '4031', name: '鳳凰' },
+  { id: '4032', name: '奧汀' },
+  { id: '4033', name: '巴哈姆特' },
+  { id: '4034', name: '拉姆' },
+  { id: '4035', name: '泰坦' },
 ] as const;
 
-export const DEFAULT_WORLD = '鳳凰';
+export const WORLD_NAME: Record<string, string> = Object.fromEntries(
+  TC_WORLDS.map((w) => [w.id, w.name]),
+);
+
+export const DEFAULT_WORLD = '4031';

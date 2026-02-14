@@ -2,7 +2,7 @@ import { useState, useCallback, useMemo } from 'react';
 import { QueryClient } from '@tanstack/react-query';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import type { CraftingJob, ProfitFilters } from '@shared/types.js';
-import { CRAFTING_JOBS, DEFAULT_WORLD } from '@shared/constants.js';
+import { CRAFTING_JOBS, DEFAULT_WORLD, WORLD_NAME } from '@shared/constants.js';
 import { createIDBPersister } from './lib/idb-persister';
 import { WorldSelector } from './components/WorldSelector';
 import { JobSelector } from './components/JobSelector';
@@ -72,7 +72,7 @@ function AppContent() {
       {data && selectedJob !== null && (
         <ResultsTable
           results={data}
-          world={world}
+          world={WORLD_NAME[world] ?? world}
           jobName={selectedJob.displayName}
           itemNames={itemNames}
         />

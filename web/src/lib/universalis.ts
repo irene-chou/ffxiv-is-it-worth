@@ -83,7 +83,7 @@ export async function fetchMarketPrices(
   for (let i = 0; i < uniqueIds.length; i += UNIVERSALIS_BATCH_SIZE) {
     const batch = uniqueIds.slice(i, i + UNIVERSALIS_BATCH_SIZE);
     const idsParam = batch.join(',');
-    const url = `${UNIVERSALIS_BASE}/${encodeURIComponent(world)}/${idsParam}`;
+    const url = `${UNIVERSALIS_BASE}/${world}/${idsParam}?listings=0`;
 
     if (batch.length === 1) {
       const data = await fetchWithRetry<UniversalisItemData | null>(url, signal);
