@@ -29,3 +29,17 @@ export const CRAFTING_JOBS: CraftingJob[] = [
 ];
 
 export const TOP_N = 5;
+
+// 繁中服（陸行鳥）伺服器列表
+export const TC_WORLDS = [
+  '伊弗利特',
+  '迦樓羅',
+  '利維坦',
+  '鳳凰',
+  '奧汀',
+  '巴哈姆特',
+  '拉姆',
+  '泰坦',
+] as const;
+
+export const DEFAULT_WORLD = '鳳凰';
