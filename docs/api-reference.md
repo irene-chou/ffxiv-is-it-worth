@@ -1,4 +1,4 @@
-# GilFinder API Reference
+# ffxiv-is-it-worth API Reference
 
 Tested on 2025-02-15. This document records the actual API response formats
 so the code can be written and debugged confidently.

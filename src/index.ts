@@ -72,7 +72,7 @@ async function main(): Promise<void> {
   const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
   try {
-    console.log(bold('\n  GilFinder - FFXIV 製作利潤分析器\n'));
+    console.log(bold('\n  這個有賺頭！ - FFXIV 製作利潤分析器\n'));
 
     // Load Traditional Chinese item names
     const itemNames = await loadItemNames((msg) => {

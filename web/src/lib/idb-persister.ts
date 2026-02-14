@@ -1,7 +1,7 @@
 import { openDB, type IDBPDatabase } from 'idb';
 import type { PersistedClient, Persister } from '@tanstack/query-persist-client-core';
 
-const DB_NAME = 'gil-finder-cache';
+const DB_NAME = 'ffxiv-is-it-worth-cache';
 const STORE = 'query-cache';
 const KEY = 'tanstack-query';
 

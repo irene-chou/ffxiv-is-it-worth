@@ -130,7 +130,7 @@ export async function loadItemNames(
 
   const res = await axios.get<string>(ITEM_CSV_URL, {
     responseType: 'text',
-    headers: { 'User-Agent': 'GilFinder/1.0' },
+    headers: { 'User-Agent': 'ffxiv-is-it-worth/1.0' },
   });
 
   const names = parseItemCsv(res.data);

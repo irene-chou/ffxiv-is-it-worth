@@ -2,7 +2,7 @@ import type { CraftingJob } from './types.js';
 
 export const XIVAPI_BASE = 'https://v2.xivapi.com';
 export const UNIVERSALIS_BASE = 'https://universalis.app/api/v2';
-export const USER_AGENT = 'GilFinder/1.0 (FFXIV crafting profit analyzer)';
+export const USER_AGENT = 'ffxiv-is-it-worth/1.0 (FFXIV crafting profit analyzer)';
 
 export const XIVAPI_DELAY_MS = 50;
 export const UNIVERSALIS_BATCH_SIZE = 100;
