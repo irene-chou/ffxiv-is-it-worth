@@ -1,0 +1,17 @@
+{
+  "name": "gil-finder",
+  "version": "1.0.0",
+  "description": "FFXIV crafting profit analyzer - find the most profitable recipes to craft",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "axios": "^1.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

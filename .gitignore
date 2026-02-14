@@ -1,0 +1,8 @@
+node_modules/
+.cache/
+dist/
+
+# Web frontend
+web/node_modules/
+web/dist/
+web/public/item-names-tc.json
