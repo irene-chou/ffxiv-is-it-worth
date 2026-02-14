@@ -120,7 +120,7 @@ export async function fetchAllRecipes(
       phase: 'recipes',
       current: recipes.length,
       total: 0,
-      detail: `已取得 ${recipes.length} 個配方（第 ${page} 頁）`,
+      detail: `已取得 ${recipes.length} 個配方`,
     });
 
     if (data.next) {
