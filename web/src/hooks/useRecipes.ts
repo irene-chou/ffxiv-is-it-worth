@@ -13,6 +13,7 @@ export function useRecipes(craftTypeId: number | null) {
       return fetchAllRecipes(craftTypeId!, signal, setProgress);
     },
     enabled: craftTypeId !== null,
+    retry: false,
     staleTime: 7 * 24 * 60 * 60 * 1000, // 7 days
     gcTime: 7 * 24 * 60 * 60 * 1000,
   });
